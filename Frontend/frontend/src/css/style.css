@@ -1,0 +1,522 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+}
+label, button, h1, h2 {
+    color: black;
+    letter-spacing: 0.5px;
+}
+a, p, b, li, h3, h4, h5, h6 {
+    color: black;
+}
+a, p, b, li, label, button, input {
+    font-family: 'CenturyGothic';
+}
+h1, h2 {
+    font-family: 'AnonymousPro';
+}
+a, p, b, li, label, button {
+    font-size: 14px;
+}
+a {
+    position: relative;
+    text-decoration: underline;
+}
+p {
+    color: hsla(0, 0%, 0%, 0.7);
+}
+h1, h2 {
+    position: relative;
+    padding-left: 20px;
+    margin: 0px;
+    font-size: 28px;
+}
+h1::before, h2::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    width: 10px;
+    transform: translateY(1px);
+    height: 100%;
+    background-color: #C93E3E;
+}
+h3, h4, h5, h6 {
+    font-family: 'CenturyGothic';
+}
+h5 {
+    font-size: 16px;
+}
+h6 {
+    font-size: 14px;
+    margin: 5px 0px;
+}
+a, button {
+    transition: 0.5s;
+    cursor: pointer;
+}
+button {
+    padding: 12px 50px;
+    border: 0px;
+    background: repeating-linear-gradient(45deg, #C93E3E, #E45959 100%);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0px 0px 20px hsl(0deg 56% 52% / 20%);
+}
+.black-btn {
+    padding: 7px 16px;
+    background: transparent;
+    border: 2.4px solid black;
+    color: black;
+    box-shadow: 0px 0px 0px;
+    font-size: 12px;
+    text-transform: none;
+}
+.black-btn:hover {
+    background: black;
+    color: white;
+}
+.price {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 42px;
+    line-height: 20px;
+    text-align: center;
+}
+.price span {
+    font-size: 16px;
+    font-weight: normal;
+}
+.container {
+    padding: 0px 100px;
+}
+.btn-group {
+    display: flex;
+    justify-content: center;
+}
+.modal {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+}
+.modal-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.shadow {
+    background-color: #00000080;
+}
+.window {
+    width: 600px;
+    padding: 40px;
+    padding-right: 240px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+.window::after {
+    content: "";
+    display: inline-block;
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: url(../img/registration_pattern.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.window .close-btn {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transform: translate(-50%, -50%);
+    padding: 0px;
+    background: transparent;
+    box-shadow: 0px 0px 0px;
+}
+.window .icon::after {
+    width: 26px;
+    height: 26px;
+}
+.window form h2 {
+    margin-bottom: 30px;
+}
+input {
+    width: 100%;
+    padding: 10px 0px;
+    border: 0px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid #666666;
+    background-color: transparent;
+    color: #666666;
+    font-size: 14px;
+    transition: 0.5s;
+}
+input {
+    margin-bottom: 20px;
+}
+input:last-child {
+    margin-bottom: 0px;
+}
+input:focus-visible {
+    outline: 0px;
+}
+input:invalid {
+    border-bottom: 3px solid #C9C9C9;
+}
+input:valid, input:focus-visible {
+    border-bottom: 3px solid #666666;
+}
+input::placeholder {
+    color: #C9C9C9;
+}
+.window form label {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.window form label, .window form label a {
+    font-size: 12px;
+}
+input[type=checkbox] {
+    width: auto;
+    transform: translateY(2px);
+    margin-left: 0px;
+    cursor: pointer;
+}
+input[type=submit] {
+    width: auto;
+    padding: 12px 50px;
+    border: 0px;
+    background: repeating-linear-gradient(45deg, #C93E3E, #E45959 100%);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0px 0px 20px hsl(0deg 56% 52% / 20%);
+    cursor: pointer;
+}
+.form-link {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+#top-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    z-index: 2;
+}
+.logo {
+    max-height: 50px;
+}
+.icon {
+    display: inline-block;
+    position: relative;
+}
+.icon::after {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+.box-icon {
+    display: inline-block;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    background: repeating-linear-gradient(45deg, #C93E3E, #E14646 100%);
+}
+.box-icon::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    transform: translate(-50%, -50%);
+}
+.user::after {
+    background: url("../img/icons/user.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.unpacking::after {
+    background: url("../img/icons/unpacking.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.circle-chart::after {
+    background: url("../img/icons/circlechart.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.schedule-mail::after {
+    background: url("../img/icons/schedulemail.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.new-contact::after {
+    background: url("../img/icons/checkedidentificationdocuments.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.folded-booklet::after {
+    background: url("../img/icons/searchcontacts.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.logotype::after {
+    background: url("../img/logotype2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 28px;
+}
+.close {
+    width: 26px;
+    height: 26px;
+    background: url("../img/icons/close.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.links a {
+    margin: 0px 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.links a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: -14px;
+    width: 2px;
+    height: 100%;
+    background-color: black;
+}
+.links a:last-child::after {
+    content: "";
+    display: none;
+}
+.links a::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: 0.5s;
+}
+.links a:hover::before {
+    background-color: black;
+}
+.log-in-btn {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 0px;
+    text-transform: none;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px;
+}
+.log-in-btn label {
+    padding-left: 2px;
+    cursor: pointer;
+}
+#header {
+    position: relative;
+    height: 100vh;
+    padding-top: 60px;
+}
+#header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 100px;
+    width: 86vh;
+    height: 86vh;
+    background-image: url('../img/Pattern21.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.header-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+}
+.header-content p {
+    margin-top: 18px;
+    margin-bottom: 25px;
+}
+#features {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+#features::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    width: 40vw;
+    height: 40vw;
+    background-image: url('../img/Pattern.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+.features-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.features-right-column {
+    position: relative;
+    left: 55%;
+    width: 45%;
+}
+.features-content p {
+    text-align: justify;
+}
+.features-boxes {
+    display: flex;
+    flex-flow: wrap;
+    padding-top: 40px;
+}
+.features-box {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    margin-bottom: 25px;
+}
+.features-box:nth-child(5), .features-box:nth-child(6) {
+    margin-bottom: 0px;
+}
+.features-box h5 {
+    padding-left: 15px;
+}
+.tariff-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tariff-btns button {
+    margin-right: 15px;
+}
+.tariff-btns button:last-child {
+    margin-right: 0px;
+}
+#tariff-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0px;
+}
+.tariff-card {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 220px;
+    height: 530px;
+    padding: 40px 15px;
+    border: 3.5px dashed black;
+}
+.tariff-card h5 {
+    margin: 0px;
+}
+.tariff-card h6 {
+    margin: 0px -10px;
+    font-weight: normal;
+    text-align: center;
+}
+.tariff-card ul {
+    padding-left: 5px;
+    margin-top: 30px;
+    margin-right: -10px;
+}
+.tariff-card ul li {
+    font-size: 12px;
+    line-height: 20px;
+}
+.tariff-card button {
+    position: absolute;
+    bottom: 40px;
+}
+.stock {
+    position: relative;
+}
+.stock::before {
+    content: var(--text);
+    display: inline-block;
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    padding: 6px 30px;
+    background: repeating-linear-gradient(45deg, #C93E3E, #E45959 100%);
+    color: white;
+    font-family: "CenturyGothic";
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#footer a {
+    font-size: 12px;
+    text-decoration: revert-layer;
+}
+#footer a:hover::before {
+    background-color: transparent;
+}
+#footer {
+    padding-top: 50px;
+    background-color: #F3F2F2;
+}
+#footer table {
+    display: flex;
+}
+#footer tr {
+    display: flex;
+}
+#footer td {
+    padding-right: 40px;
+}
+#footer td:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footer td:last-child {
+    padding-right: 0px;
+}
+#footer p {
+    padding: 30px 0px;
+    margin: 0px;
+    font-size: 12px;
+    text-align: center;
+}
