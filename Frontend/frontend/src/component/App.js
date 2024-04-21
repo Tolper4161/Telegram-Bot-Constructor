@@ -25,7 +25,6 @@ const App = () => {
             {
                 showModal === 2 ? <Registration toggleModal={setShowModal} /> : null
             }
-            {console.log(showModal)}
         </div>
     )
 }

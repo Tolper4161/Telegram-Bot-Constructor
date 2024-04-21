@@ -1,20 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Autorisation = ({ toggleModal }) => {
+const Autorisation = ({ toggleModal, isOpened }) => {
+    const [inputEmail, setInputEmail] = useState("");
+    const [inputPassword, setInputPassword] = useState("");
+    const [animation, setAnimation] = useState("float-from-left");
+    const [isButtonActive, setButtonActive] = useState(false);
+    // float-to-right
+
+    const closeModal = async (func, data, ms) => {
+        await new Promise(r => setTimeout(r, ms));
+        func(data);
+    }
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+    
+        const response = fetch("http://127.0.0.1:8000/login", {
+            method: "POST",
+            body: JSON.stringify({
+                email: inputEmail,
+                password: inputPassword, 
+            }), 
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        });
+    }
+
+    const setValue = (setter, value) => {
+        setter(value);
+        if (inputEmail.length > 1 && inputPassword.length > 1) {
+            setButtonActive(true);
+        } else {
+            setButtonActive(false);
+        }
+        console.log(inputEmail, inputPassword);
+    }
+
     return (
-        <div class="shadow modal" id="modal-window">
-            <div class="modal-content">
-                <div class="window">
-                    <form action="#" method="post">
+        <div className="shadow modal" id="modal-window">
+            <div className={"modal-content" + animation}>
+                <div className="window">
+                    <form onSubmit={submitHandler} method="POST">
                         <h2>Авторизация</h2>
-                        <input type="email" name="email" placeholder="Почта" required="required" />
-                        <input type="password" name="password" placeholder="Пароль" required="required" />
-                        <a className="form-link" onClick={() => toggleModal(2)}>Регистрация</a>
+                        <input type="email" name="email" placeholder="Почта" required="required" onChange={(event) => setValue(setInputEmail, event.target.value)} />
+                        <input type="password" name="password" placeholder="Пароль" required="required" onChange={(event) => setValue(setInputPassword, event.target.value)} />
+                        <a className="form-link" onClick={() => closeModal(toggleModal, 2, 800)}>Регистрация</a>
                         <div className="btn-group">
-                            <input type="submit" value="Отправить" />
+                            <input className={isButtonActive ? "" : "unactive"} type="submit" value="Отправить" />
                         </div>
                     </form>
-                    <button class="close-btn" onClick={() => toggleModal(0)}><span class="icon close"></span></button>
+                    <button className="close-btn" onClick={() => closeModal(toggleModal, 0, 800)} disabled={!isButtonActive}><span class="icon close"></span></button>
                 </div>
             </div>
         </div>
