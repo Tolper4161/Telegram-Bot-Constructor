@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+    <div class="global-container">
+        <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Ваша учетная запись должна быть подтверждена</h3>
+            <div class="card-text text-center">
+                Привет, вставьте ссылку для подтверждения своей учетной записи http://127.0.0.1:8000/verify/{token}
+            </div>
+            <div class="sign-up">
+                Получили письмо? <a href="{% url 'token_send' %}">Продолжить</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+    
+    {% block content %}
+
+    <div class="global-container">
+        <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Вход в аккаунт</h3>
+            <div class="card-text">
+                
+                <form>
+                    <p>Электронная почта: <input type="text" name="email" /></p>
+                    <p>Пароль: <input type="password" name="password" /></p>
+                    <a href="#" style="float:right;font-size:16px;">Забыли пароль?</a>
+                    <input type="submit" value="Войти">
+                    <div class="sign-up">
+                        Нет аккаунта? <a href="/register">Создать аккаунт</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {% endblock %}
